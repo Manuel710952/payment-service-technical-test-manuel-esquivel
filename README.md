@@ -31,7 +31,7 @@ Autor: Manuel Esquivel Alemán
 ## Levantar el proyecto
 ```Bash
 # Clonar el repositorio
-git clone <url-del-repo>
+git clone https://github.com/Manuel710952/payment-service-technical-test-manuel-esquivel.git
 cd payment-service
 
 # Levantar todos los servicios (MongoDB + RabbitMQ + App)
