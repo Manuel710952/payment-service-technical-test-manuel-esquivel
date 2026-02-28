@@ -179,4 +179,4 @@ Después del tercer fallo el mensaje va a la DLQ para análisis posterior.
 
 ## Importar colección Postman
 
-Importar payments.postman_collection.json en Postman.
+Importar Payment Service API.postman_collection.json en Postman.
