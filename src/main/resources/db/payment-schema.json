@@ -1,0 +1,63 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "Payment",
+    "description": "Schema para la colección de pagos",
+    "required": [
+      "concepto",
+      "cantidadProductos",
+      "pagador",
+      "beneficiario",
+      "montoTotal",
+      "estatus",
+      "fechaCreacion"
+    ],
+    "properties": {
+      "_id": {
+        "bsonType": "objectId",
+        "description": "Identificador único generado por MongoDB"
+      },
+      "concepto": {
+        "bsonType": "string",
+        "minLength": 1,
+        "maxLength": 255,
+        "description": "Descripción del pago. Obligatorio."
+      },
+      "cantidadProductos": {
+        "bsonType": "int",
+        "minimum": 1,
+        "description": "Número de productos. Debe ser mayor a 0."
+      },
+      "pagador": {
+        "bsonType": "string",
+        "minLength": 1,
+        "maxLength": 150,
+        "description": "Quien realiza el pago. Obligatorio."
+      },
+      "beneficiario": {
+        "bsonType": "string",
+        "minLength": 1,
+        "maxLength": 150,
+        "description": "Quien recibe el pago. Obligatorio."
+      },
+      "montoTotal": {
+        "bsonType": "decimal",
+        "minimum": 0.01,
+        "description": "Monto total. Debe ser mayor a 0."
+      },
+      "estatus": {
+        "bsonType": "string",
+        "enum": ["PENDING", "PROCESSING", "COMPLETED", "FAILED"],
+        "description": "Estado actual del pago."
+      },
+      "fechaCreacion": {
+        "bsonType": "date",
+        "description": "Fecha de registro. Asignada automáticamente."
+      },
+      "fechaActualizacion": {
+        "bsonType": "date",
+        "description": "Fecha de última actualización."
+      }
+    }
+  }
+}

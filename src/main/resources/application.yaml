@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: payment-service
+
+  # MongoDB
+  data:
+    mongodb:
+      uri: mongodb://mongo:27017/payments_db
+      auto-index-creation: true
+
+  # RabbitMQ
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: usuarioTest
+    password: 1234
+    listener:
+      simple:
+        acknowledge-mode: auto
+        retry:
+          enabled: true
+          initial-interval: 1000  
+          multiplier: 2.0         
+          max-interval: 10000     
+          max-attempts: 3         
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.mesquivel.payments: DEBUG
+    org.springframework.amqp: INFO

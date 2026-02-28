@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "58f61269-c712-4ad1-a508-ce5a9412d864",
+		"name": "Payment Service API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Crear pago",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"concepto\":\"Compra de iphone\",\r\n    \"cantidadProductos\":1,\r\n    \"pagador\":\"Juan Perez\",\r\n    \"beneficiario\":\"Empresa Test\",\r\n    \"montoTotal\":32000.00\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/payments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Listar pagos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/payments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Cambiar a PROCESSING",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"estatus\":\"PROCESSING\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/payments/69a3531df9ab84170da2c5a0/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"payments",
+						"69a3531df9ab84170da2c5a0",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Cambiar a COMPLETED",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"estatus\":\"COMPLETED\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/payments/69a3531df9ab84170da2c5a0/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"payments",
+						"69a3531df9ab84170da2c5a0",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Consultar estatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/payments/69a3531df9ab84170da2c5a0/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"payments",
+						"69a3531df9ab84170da2c5a0",
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
